@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neon_grad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6" />
+      <stop offset="0.5" stop-color="#06b6d4" />
+      <stop offset="1" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <path d="M20 40 Q 5 10 60 60 L 80 90" stroke="url(#neon_grad)" stroke-width="4" stroke-linecap="round" filter="url(#glow)" opacity="0.8"/>
+  <path d="M30 55 Q 20 35 65 70" stroke="url(#neon_grad)" stroke-width="3" stroke-linecap="round" filter="url(#glow)" opacity="0.6"/>
+
+  <path d="M180 40 Q 195 10 140 60 L 120 90" stroke="url(#neon_grad)" stroke-width="4" stroke-linecap="round" filter="url(#glow)" opacity="0.8"/>
+  <path d="M170 55 Q 180 35 135 70" stroke="url(#neon_grad)" stroke-width="3" stroke-linecap="round" filter="url(#glow)" opacity="0.6"/>
+
+  <path d="M60 60 L 85 130 L 100 80 L 115 130 L 140 60" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
+  <path d="M60 60 L 85 130 L 100 80 L 115 130 L 140 60" stroke="url(#neon_grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
