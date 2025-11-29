@@ -1,15 +1,13 @@
-// 1. Генератор клиента
 generator client {
   provider = "prisma-client-js"
 }
 
-// 2. Подключение к базе данных (ОБЯЗАТЕЛЬНЫЙ БЛОК)
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-// 3. Наша модель (Таблица CityPage с новыми полями)
+// Модель для Городов
 model CityPage {
   id           Int      @id @default(autoincrement())
   slug         String   @unique
@@ -18,8 +16,28 @@ model CityPage {
   seoText      String   @db.Text
   contactPhone String
   contactEmail String
-  whatsappLink String   // Новое поле
-  telegramLink String   // Новое поле
+  whatsappLink String
+  telegramLink String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+// Модель для Услуг
+model Service {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  iconName    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Модель для Заявок (Лидов)
+model Lead {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String
+  city      String
+  status    String   @default("new")
+  createdAt DateTime @default(now())
 }
